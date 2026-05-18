@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+html {
+    font-size: 14px;
+    scroll-behavior: smooth;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #0d0d0f;
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 60px;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: #111114 !important;
+    border-bottom: 1px solid #1e1e2e;
+    padding: 1rem 2rem;
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #00aaff !important;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.nav-link {
+    color: #aaaaaa !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin: 0 0.5rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #00aaff;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #00aaff !important;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #00aaff;
+    padding-left: 1rem;
+}
+
+/* TABLES */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    background-color: #111114;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #00aaff;
+}
+
+thead th {
+    color: #ffffff;
+    padding: 1rem 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+}
+
+tbody tr {
+    border-bottom: 1px solid #1e1e2e;
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #1a1a2e;
+}
+
+tbody td {
+    padding: 0.9rem 1.2rem;
+    color: #cccccc;
+    font-size: 0.95rem;
+}
+
+/* BUTTONS */
+a, .btn {
+    text-decoration: none;
+}
+
+.btn, a.btn, input[type="submit"] {
+    display: inline-block;
+    padding: 0.55rem 1.4rem;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #00aaff;
+    color: #ffffff !important;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.4s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 170, 255, 0.4);
+    background-color: #0099ee;
+    color: #ffffff !important;
+}
+
+.btn:active {
+    transform: translateY(0px);
+    box-shadow: none;
+}
+
+.btn:active {
+    transform: translateY(0px);
+    box-shadow: none;
+}
+
+/* Delete button red */
+a[href*="Delete"], input[value*="Delete"], input[value*="Yes"] {
+    background-color: #cc2233 !important;
+}
+
+a[href*="Delete"]:hover, input[value*="Delete"]:hover, input[value*="Yes"]:hover {
+    background-color: #aa1122 !important;
+    box-shadow: 0 6px 20px rgba(204, 34, 51, 0.4) !important;
+}
+
+/* FORMS */
+form div {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    color: #aaaaaa;
+    margin-bottom: 0.4rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="datetime-local"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    background-color: #1a1a2e;
+    border: 1px solid #2a2a3e;
+    border-radius: 8px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #00aaff;
+    box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.15);
+}
+
+/* CONTAINERS */
+.container {
+    padding: 2rem 1.5rem;
+}
+
+/* FOOTER */
+footer {
+    background-color: #111114;
+    border-top: 1px solid #1e1e2e;
+    color: #555555;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
