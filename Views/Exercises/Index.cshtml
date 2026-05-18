@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TrainingLog.Models.Exercise>
+
+@{
+    ViewData["Title"] = "Exercises";
+}
+
+<h2>Exercises</h2>
+
+<a asp-action="Create">Add New Exercises</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Workout</th>
+            <th>Name</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Weight (kg)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Workout?.Date.ToShortDateString()</td>
+                <td>@item.Name</td>
+                <td>@item.Sets</td>
+                <td>@item.Reps</td>
+                <td>@item.WeightKg</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.ExerciseId">Details</a>
+                    <a asp-action="Edit" asp-route-id="@item.ExerciseId">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.ExerciseId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,45 @@
+﻿@model TrainingLog.Models.Exercise
+
+@{
+    ViewData["Title"] = "Edit Exercise";
+}
+
+<h2>Edit Exercise</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="ExerciseId" />
+    <div>
+        <label asp-for="WorkoutId"></label>
+        <select asp-for="WorkoutId">
+            @foreach (var workout in ViewBag.Workouts)
+                    {
+                        <option value="@workout.WorkoutId">@workout.Date.ToShortDateString() - @workout.Notes</option>
+                    }
+                </select>
+                <span asp-validation-for="WorkoutId"></span>
+    </div>
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Sets"></label>
+        <input asp-for="Sets" />
+        <span asp-validation-for="Sets"></span>
+    </div>
+    <div>
+        <label asp-for="Reps"></label>
+        <input asp-for="Reps" />
+        <span asp-validation-for="Reps"></span>
+    </div>
+    <div>
+        <label asp-for="WeightKg"></label>
+        <input asp-for="WeightKg" />
+        <span asp-validation-for="WeightKg"></span>
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+        <a asp-action="Index">Back to List</a>
+    </div>
+</form>

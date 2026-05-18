@@ -1,0 +1,26 @@
+﻿@model TrainingLog.Models.Athlete
+
+@{
+    ViewData["Title"] = "Delete Athlete";
+}
+
+<h2>Are you sure you want to delete this athlete?</h2>
+
+<div>
+    <label>Name:</label>
+    <span>@Model.Name</span>
+</div>
+<div>
+    <label>Age:</label>
+    <span>@Model.Age</span>
+</div>
+<div>
+    <label>Position:</label>
+    <span>@Model.Position</span>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="AthleteId" />
+    <input type="submit" value="Yes, Delete" />
+    <a asp-action="Index">Cancel</a>
+</form>

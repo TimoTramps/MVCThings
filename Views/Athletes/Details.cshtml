@@ -1,0 +1,27 @@
+﻿@model TrainingLog.Models.Athlete
+
+@{
+    ViewData["Title"] = "Athlete Details";
+}
+
+<h2>Athlete Details</h2>
+
+<div>
+    <label>Name:</label>
+    <span>@Model.Name</span>
+</div>
+<div>
+    <label>Age:</label>
+    <span>@Model.Age</span>
+</div>
+<div>
+    <label>Position:</label>
+    <label>@Model.Position</label>
+</div>
+<div>
+    <label>Created At:</label>
+    <span>@Model.CreatedAt.ToShortDateString()</span>
+</div>
+
+<a asp-action="Edit" asp-route-id="@Model.AthleteId">Edit</a>
+<a asp-action="Index">Back to List</a>

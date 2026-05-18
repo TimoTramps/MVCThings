@@ -1,0 +1,30 @@
+﻿@model TrainingLog.Models.Exercise
+
+@{
+    ViewData["Title"] = "Delete Exercises";
+}
+
+<h2>Are you sure you want to delete this exercise?</h2>
+
+<div>
+    <label>Workout:</label>
+    <span>@Model.Workout?.Date.ToShortDateString()</span>
+</div>
+<div>
+    <label>Sets:</label>
+    <span>@Model.Sets</span>
+</div>
+<div>
+    <label>Reps:</label>
+    <span>@Model.Reps</span>
+</div>
+<div>
+    <label>Weight (kg)</label>
+    <span>@Model.WeightKg</span>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="ExerciseId" />
+    <input type="submit" value="Yes, Delete" />
+    <a asp-action="Index">Cancel</a>
+</form>

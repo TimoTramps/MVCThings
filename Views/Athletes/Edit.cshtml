@@ -1,0 +1,40 @@
+﻿@model TrainingLog.Models.Athlete
+
+@{
+    ViewData["Title"] = "Edit Athlete";
+}
+
+<h2>Edit Athlete</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="AthleteId" />
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Age"></label>
+        <input asp-for="Age" />
+        <span asp-validation-for="Age"></span>
+    </div>
+    <div>
+        <label asp-for="Position"></label>
+        <input asp-for="Position" />
+        <span asp-validation-for="Position"></span>
+    </div>
+    <div>
+        <label asp-for="Position"></label>
+        <input asp-for="Position" />
+        <span asp-validation-for="Position"></span>
+    </div>
+    <div>
+        <label asp-for="CreatedAt"></label>
+        <input asp-for="CreatedAt" />
+        <span asp-validation-for="CreatedAt"></span>
+    </div>
+    <div>
+        <input type="submit" value="Save"/>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</form>
